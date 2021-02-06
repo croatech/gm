@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres:13.1
+    restart: unless-stopped
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: '/var/lib/postgresql/data/db-files/'
+
+volumes:
+  pg_data:
