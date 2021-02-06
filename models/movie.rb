@@ -4,8 +4,9 @@ class Movie < Sequel::Model
   def validate
     super
     errors.add(:title, 'cannot be empty') if !title || title.empty?
-    errors.add(:external_id, 'cannot be empty') if !external_id || external_id.empty?
+    errors.add(:external_id, 'cannot be empty') if !external_id
     errors.add(:image, 'cannot be empty') if !image || image.empty?
+    errors.add(:release_year, 'cannot be empty') if !release_year || release_year.empty?
   end
 end
 

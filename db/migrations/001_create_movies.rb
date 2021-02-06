@@ -5,6 +5,7 @@ Sequel.migration do
       column :external_id, Integer, null: false, unique: true
       column :title, String, null: false
       column :image, String, null: false
+      column :release_year, String, null: false
     end
   end
 end
