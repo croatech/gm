@@ -7,5 +7,12 @@ gem 'sequel-annotate'
 gem 'yaml'
 gem 'dotenv'
 gem 'httparty'
+gem 'rack'
+gem 'rack-cors'
+gem 'grape'
+gem 'grape-entity'
+gem 'puma'
 
-gem 'byebug'
+group :development do
+  gem 'byebug'
+end

@@ -29,3 +29,16 @@ task 'import_movies' do
   require_relative 'services/import_movies_service'
   ImportMoviesService.new.call
 end
+
+task :environment do
+  ENV['RACK_ENV'] ||= 'development'
+  require File.expand_path('config/environment', __dir__)
+end
+
+task routes: :environment do
+  Sphinx::API.routes.each do |route|
+    method = route.request_method.ljust(10)
+    path = route.origin
+    puts "     #{method} #{path}"
+  end
+end
