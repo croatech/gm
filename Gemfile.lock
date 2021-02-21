@@ -67,6 +67,9 @@ GEM
     sequel (5.41.0)
     sequel-annotate (1.6.0)
       sequel (>= 4)
+    sequel_pg (1.14.0)
+      pg (>= 0.18.0, != 1.2.0)
+      sequel (>= 4.38.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     yaml (0.1.1)
@@ -81,12 +84,12 @@ DEPENDENCIES
   grape
   grape-entity
   httparty
-  pg
   puma
   rack
   rack-cors
   sequel (~> 5.41.0)
   sequel-annotate
+  sequel_pg
   yaml
 
 RUBY VERSION

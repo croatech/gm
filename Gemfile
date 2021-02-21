@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.0.0'
 
 gem 'sequel', '~> 5.41.0'
-gem 'sequel-annotate'
+gem 'sequel_pg'
 gem 'yaml'
 gem 'dotenv'
 gem 'httparty'
@@ -12,8 +12,8 @@ gem 'rack-cors'
 gem 'grape'
 gem 'grape-entity'
 gem 'puma'
-gem 'pg'
 
 group :development do
   gem 'byebug'
+  gem 'sequel-annotate'
 end

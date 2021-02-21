@@ -14,5 +14,9 @@ Dir[File.expand_path('../api/*.rb', __dir__)].each do |f|
   require f
 end
 
+Dir[File.expand_path('../models/*.rb', __dir__)].each do |f|
+  require f
+end
+
 require 'api'
 require 'app'

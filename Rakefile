@@ -1,6 +1,8 @@
 require 'dotenv/load'
 Dotenv.load
 
+require_relative 'db/seeds'
+
 migrate = lambda do |env, version|
   ENV['RACK_ENV'] = env
   require_relative 'db'
@@ -12,6 +14,11 @@ namespace :db do
   desc 'Run migrations'
   task :migrate do
     migrate.call('development', nil)
+  end
+
+  desc 'Run seeds'
+  task :seed do
+    Seeds.call
   end
 end
 
