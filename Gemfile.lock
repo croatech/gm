@@ -29,6 +29,8 @@ GEM
       dry-core (~> 0.5, >= 0.5)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     grape (1.5.2)
       activesupport
       builder
@@ -81,6 +83,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   dotenv
+  fast_jsonapi
   grape
   grape-entity
   httparty

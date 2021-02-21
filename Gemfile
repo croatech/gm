@@ -12,6 +12,7 @@ gem 'rack-cors'
 gem 'grape'
 gem 'grape-entity'
 gem 'puma'
+gem 'fast_jsonapi'
 
 group :development do
   gem 'byebug'

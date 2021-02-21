@@ -1,7 +1,9 @@
 module Sphinx
   class API < Grape::API
-    prefix 'api'
+    prefix :api
     format :json
-    mount ::Sphinx::Users
+    helpers Helpers
+
+    mount ::Sphinx::Api::Users
   end
 end

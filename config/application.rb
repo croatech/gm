@@ -10,12 +10,10 @@ Dotenv.load
 
 Bundler.require :default, ENV['RACK_ENV']
 
-Dir[File.expand_path('../api/*.rb', __dir__)].each do |f|
-  require f
-end
-
-Dir[File.expand_path('../models/*.rb', __dir__)].each do |f|
-  require f
+['../api/*.rb', '../models/*.rb', '../serializers/*.rb'].each do |path|
+  Dir[File.expand_path(path, __dir__)].each do |f|
+    require f
+  end
 end
 
 require 'api'

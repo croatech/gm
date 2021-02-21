@@ -1,9 +1,16 @@
 require 'sequel'
 
 class User < Sequel::Model
+  attr_accessor :id
+
   def validate
     errors.add(:mac_address, 'cannot be empty') if mac_address.nil?
     validates_format /^([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}$/i, :mac_address
+  end
+
+  def self.authorize!(env)
+    auth_value = env.select { |key, _| key.include?('HTTP_') }['HTTP_AUTHORIZATION']
+    User.where(mac_address: auth_value).first
   end
 end
 
