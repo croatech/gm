@@ -16,3 +16,8 @@
 `rake annotate`
 
 `rake routes`
+
+# Console
+`irb`
+
+`require './config/environment.rb'`

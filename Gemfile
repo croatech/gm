@@ -13,6 +13,8 @@ gem 'grape'
 gem 'grape-entity'
 gem 'puma'
 gem 'fast_jsonapi'
+gem 'dry-container'
+gem 'dry-auto_inject'
 
 group :development do
   gem 'byebug'
