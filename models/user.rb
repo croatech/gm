@@ -8,7 +8,11 @@ class User < Sequel::Model
 
   def self.authorize!(env)
     auth_value = env.select { |key, _| key.include?('HTTP_') }['HTTP_AUTHORIZATION']
-    Users::CurrentUserService.new.call(auth_value)
+    Users::CurrentUserService.new.call(auth_value).result
+  end
+
+  def active_game
+    Game.active.where(user_id: self.id).first
   end
 end
 

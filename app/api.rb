@@ -5,5 +5,6 @@ module Sphinx
     helpers Helpers
 
     mount ::Sphinx::Api::Users
+    mount ::Sphinx::Api::Games
   end
 end

@@ -15,6 +15,7 @@ gem 'puma'
 gem 'fast_jsonapi'
 gem 'dry-container'
 gem 'dry-auto_inject'
+gem 'aasm'
 
 group :development do
   gem 'byebug'

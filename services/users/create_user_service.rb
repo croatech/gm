@@ -1,7 +1,13 @@
 module Users
-  class CreateUserService
+  class CreateUserService < BaseService
+    def initialize
+      super
+    end
+
     def call(params)
-      User.create(params)
+      @result = User.create(params)
+
+      self
     end
   end
 end
